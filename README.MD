@@ -1,2 +1,2 @@
-#PHP TEST SCRIPT
+# PHP TEST SCRIPT
 ## My first php script

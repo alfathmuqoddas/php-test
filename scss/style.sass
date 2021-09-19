@@ -1,0 +1,117 @@
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+
+@mixin flex
+  display: flex
+  justify-content: space-between
+  align-items: center
+  
+*
+  box-sizing: border-box
+  font-family: 'Inter', sans-serif
+  margin: 0
+  padding: 0
+
+a
+  text-decoration: none
+  h1
+    color: black
+
+.flex
+  @include flex
+  
+@mixin container
+  max-width: 1100px
+  margin: 0 auto
+  padding: 0 1rem
+    
+nav
+  @include flex
+  max-width: 1100px
+  margin: 0.5rem auto
+  ul
+    @include flex
+  li
+    list-style: none
+  a
+    padding: 0 1rem
+    color: black
+    &:hover
+      color: blue
+
+.flex-resp
+  flex-direction: column
+
+.card-icon
+  font-size: 3rem
+  margin: 1.5rem 0
+
+.light-gray
+  background-color: lighten(#D3D3D3, 15%)
+
+.card
+  padding: 1rem
+  flex: 1 1 0px
+  border-radius: 0.25rem
+  border: solid 1px LightBlue
+  transition-duration: 0.3s
+  p
+    margin: 1rem 0
+  .card-body
+    text-align: center
+  &:hover
+    border: none
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px
+  
+.bg-blue
+  background-color: blue
+
+.testimonial-card
+  @include flex
+  @extend .flex-resp
+  padding-top: 2rem
+  gap: 1rem
+  text-align: center
+  .card
+    min-height: 10rem
+    h1
+      font-weight: 300
+
+.footer
+  text-align: center
+  color: white
+  @include container
+
+.shit
+  color: green
+    
+$sizes: (1, 2, 3, 4, 5)
+@each $size in $sizes
+  .p-#{$size}
+    padding: #{$size}rem
+  .px-#{$size}
+    padding: 0 #{$size}rem
+  .py-#{$size}
+    padding: #{$size}rem 0
+  .m-#{$size}
+    margin: #{$size}rem
+  .mx-#{$size}
+    margin: 0 #{$size}rem
+  .my-#{$size}
+    margin: #{$size}rem 0
+  .font-#{$size}
+    font-size: #{$size}rem
+  .gap-#{$size}
+    gap: #{$size}rem
+
+@media (min-width: 768px)
+  .flex-resp
+    flex-direction: row
+  
+  .section-1
+    .left
+      width: 60%
+    .right
+      width: 40%
+  
+  .section-head-flex
+    gap: 5rem
